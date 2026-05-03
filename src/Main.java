@@ -41,6 +41,7 @@ public class Main {
             index++;
         }
         System.out.println(Arrays.toString(outputArray2));
+        System.out.println(Arrays.toString(inputArray2));
 
 
         System.out.println("Task 3");
@@ -59,16 +60,16 @@ public class Main {
         System.out.println("Task 4");
 
         int[] inputArray4 = {100, -1, 300, 400, 500};
-        boolean outputArray4 = true;
+        boolean[] outputArray4 = {true};
 
         for (int remain : inputArray4) {
             if (remain < 0) {
-                outputArray4 = false;
+                outputArray4[0] = false;
                 break;
             }
         }
         System.out.println(Arrays.toString(inputArray4));
-        System.out.println(outputArray4);
+        System.out.println(Arrays.toString(outputArray4));
 
 
         System.out.println("Task 5");
