@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Task 1");
 
-
         int[] inputArray1 = {100, 200, 300, 400, 500};
         float[] outputArray1 = new float[4];
         int sum = 0;
@@ -15,17 +14,11 @@ public class Main {
 
         for (int sumM : inputArray1) {
             sum += sumM;
-        }
-
-        for (int max : inputArray1) {
-            if (max > maxSum) {
-                maxSum = max;
+            if (sumM > maxSum) {
+                maxSum = sumM;
             }
-        }
-
-        for (int min : inputArray1) {
-            if (min < minSum) {
-                minSum = min;
+            if (sumM < minSum) {
+                minSum = sumM;
             }
         }
         double averageSum = (float) sum / inputArray1.length;
@@ -40,10 +33,12 @@ public class Main {
 
 
         int[] inputArray2 = {100, 200, 300, 400, 500};
-        float[] outputArray2 = new float[5];
+        float[] outputArray2 = new float[inputArray2.length];
 
-        for (int iA = 0; iA < 5; iA++) {
-            outputArray2[iA] = ((float) inputArray2[iA] / 100) * 13;
+        int index = 0;
+        for (int salaryS : inputArray2) {
+            outputArray2[index] = ((float) salaryS / 100) * 13;
+            index++;
         }
         System.out.println(Arrays.toString(outputArray2));
 
@@ -52,14 +47,10 @@ public class Main {
 
         int[] inputArray3 = {1000, 3000, 7000, 10000, 15000};
         boolean[] outputArray3 = new boolean[inputArray3.length];
-
+        int indexX = 0;
         for (int bonus : inputArray3) {
-            if (bonus > 5000) {
-            } else {
-            }
-        }
-        for (int oA = 0; oA < outputArray3.length; oA++) {
-            outputArray3[oA] = inputArray3[oA] > 5000;
+            outputArray3[indexX] = bonus > 5000;
+            indexX++;
         }
         System.out.println(Arrays.toString(inputArray3));
         System.out.println(Arrays.toString(outputArray3));
@@ -68,30 +59,21 @@ public class Main {
         System.out.println("Task 4");
 
         int[] inputArray4 = {100, -1, 300, 400, 500};
-        boolean[] outputArray4 = new boolean[inputArray4.length];
-        boolean hasNegative = false;
+        boolean outputArray4 = true;
 
         for (int remain : inputArray4) {
-            if (remain > 0) {
-            } else if (remain < 0) {
-                hasNegative = true;
+            if (remain < 0) {
+                outputArray4 = false;
                 break;
             }
         }
-        for (int oS = 0; oS < outputArray4.length; oS++) {
-            outputArray4[oS] = inputArray4[oS] > 0;
-
-
-        }
         System.out.println(Arrays.toString(inputArray4));
-        System.out.println(Arrays.toString(outputArray4));
-        System.out.println(!hasNegative);
+        System.out.println(outputArray4);
 
 
         System.out.println("Task 5");
 
-        int[] inputArray5 = {100, 200, 300, 400, 500};
-        int[] outputArray5 = new int[inputArray5.length];
+        int[] inputArray5 = {-1, 200, 300, 400, 500};
         int monthProfit = 0;
 
         for (int profit : inputArray5) {
@@ -99,9 +81,9 @@ public class Main {
                 monthProfit++;
             }
         }
-        System.out.println("Количество прибыльных месяцев " + monthProfit);
+        int[] outputArray5 = {monthProfit};
+        System.out.println("Количество прибыльных месяцев " + Arrays.toString(outputArray5));
         System.out.println(Arrays.toString(inputArray5));
-        System.out.println(Arrays.toString(outputArray5));
 
-        }
     }
+}
